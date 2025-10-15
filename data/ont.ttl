@@ -1,0 +1,148 @@
+@prefix : <http://www.semanticweb.org/flucc/ontologies/2025/9/untitled-ontology-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/flucc/ontologies/2025/9/untitled-ontology-2/> .
+
+<https://w3id.org/FAIR-course-UT/2025-2026/group22/ont> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Vehicle ;
+             rdfs:range :Location .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#hasManufacturer
+:hasManufacturer rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf :manufacturesModel ;
+                 rdfs:domain :Model ;
+                 rdfs:range :Manufacturer .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#hasModel
+:hasModel rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Vehicle ;
+          rdfs:range :Model .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#hasType
+:hasType rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Vehicle ;
+         rdfs:range :VehicleType .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#manufacturesModel
+:manufacturesModel rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :Manufacturer ;
+                   rdfs:range :Model .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Census2020Tract
+:Census2020Tract rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Vehicle ;
+                 rdfs:range xsd:integer .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#City
+:City rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Location ;
+      rdfs:range xsd:string .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#CleanAlternativeFuel
+:CleanAlternativeFuel rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain :Model ;
+                      rdfs:range xsd:string .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#DolVehicleId
+:DolVehicleId rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Vehicle ;
+              rdfs:range xsd:integer .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#ElectricRange
+:ElectricRange rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Model ;
+               rdfs:range xsd:integer .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#ModelYear
+:ModelYear rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Model .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#PostalCode
+:PostalCode rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Location ;
+            rdfs:range xsd:integer .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Vin
+:Vin rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Vehicle ;
+     rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Location
+:Location rdf:type owl:Class .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Manufacturer
+:Manufacturer rdf:type owl:Class .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Model
+:Model rdf:type owl:Class .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Vehicle
+:Vehicle rdf:type owl:Class .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#VehicleType
+:VehicleType rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Location
+                :Manufacturer
+                :Model
+                :Vehicle
+                :VehicleType
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
