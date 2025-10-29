@@ -1,0 +1,22 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix language: <http://id.loc.gov/vocabulary/iso639-1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix loc: <http://localhost:8080/>.
+@prefix d: <http://localhost:8080/dataset/>.
+@prefix gro: <https://www.w3id.org/fair-course-UT/2025/group22/>.
+
+loc:new
+    a dcat:Distribution, dcat:Resource;
+    dct:description
+    "FAIRified distribution of the electric vehicle population dataset.";
+    dct:isPartOf d:eb541e3d-646e-41ff-a08d-637a86ee4e06;
+    dct:issued "2025-10-28T23:00:00Z"^^xsd:dateTime;
+    dct:language language:en;
+    dct:license <http://purl.org/NET/rdflicense/cc-zero1.0>;
+    dct:publisher [ a foaf:Agent; foaf:name "Group 22" ];
+    dct:title "FAIRified distribution";
+    dcat:downloadURL gro:fairifieddataset;
+    dcat:mediaType "text/csv";
+    dcat:version "1.0.0".
