@@ -1,0 +1,158 @@
+@prefix : <https://w3id.org/FAIR-course-UT/2025-2026/group22/ont> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix om-2: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/FAIR-course-UT/2025-2026/group22/ont> .
+
+<https://w3id.org/FAIR-course-UT/2025-2026/group22/ont> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/identifier
+dc:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/mile-USSurvey
+om-2:mile-USSurvey rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Vehicle ;
+             rdfs:range :Location .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#hasModel
+:hasModel rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Vehicle ;
+          rdfs:range :VehicleModel .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.org/postalCode
+<https://schema.org/postalCode> rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty ;
+                                rdfs:domain :Location ;
+                                rdfs:range xsd:integer ;
+                                rdfs:label "PostalCode"@en .
+
+
+###  https://schema.org/vehicleIdentificationNumber
+<https://schema.org/vehicleIdentificationNumber> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain :Vehicle ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:label "VIN (1-10)"@en .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Census2020Tract
+:Census2020Tract rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Vehicle ;
+                 rdfs:range xsd:integer ;
+                 rdfs:label "2020 Census Track"@en .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#CleanAlternativeFuel
+:CleanAlternativeFuel rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "CAFV Eligibility"@en .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#DolVehicleId
+:DolVehicleId rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Vehicle ;
+              rdfs:range xsd:integer ;
+              rdfs:label "DOL Vehicle ID"@en .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#VehicleId
+:VehicleId rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Vehicle ;
+           rdfs:range xsd:string ;
+           dc:identifier :VehicleId .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/schema.org/modelDate
+<https://w3id.org/FAIR-course-UT/2025-2026/group22/schema.org/modelDate> rdf:type owl:DatatypeProperty ;
+                                                                         rdfs:subPropertyOf owl:topDataProperty ;
+                                                                         rdfs:label "ModelYear"@en .
+
+
+###  https://www.wikidata.org/wiki/Q1093829
+<https://www.wikidata.org/wiki/Q1093829> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf owl:topDataProperty ,
+                                                            <https://www.wikidata.org/wiki/Q1093829> ;
+                                         rdfs:domain :Location ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:label "City"@en .
+
+
+###  https://www.wikidata.org/wiki/Q13629441
+<https://www.wikidata.org/wiki/Q13629441> rdf:type owl:DatatypeProperty ;
+                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                          rdfs:domain :VehicleModel ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:label "Electric Vehicle Type"@en .
+
+
+###  https://www.wikidata.org/wiki/Q190117
+<https://www.wikidata.org/wiki/Q190117> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain :VehicleModel ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:label "Manufacturer"@en .
+
+
+###  https://www.wikidata.org/wiki/Q3231690
+<https://www.wikidata.org/wiki/Q3231690> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf owl:topDataProperty ;
+                                         rdfs:domain :VehicleModel ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:label "Model"@en .
+
+
+###  https://www.wikidata.org/wiki/Q4728349
+<https://www.wikidata.org/wiki/Q4728349> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf owl:topDataProperty ;
+                                         rdfs:domain :VehicleModel ;
+                                         rdfs:range xsd:integer ;
+                                         om-2:mile-USSurvey "miles" ;
+                                         rdfs:label "Electric Range"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Location
+:Location rdf:type owl:Class .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#Vehicle
+:Vehicle rdf:type owl:Class .
+
+
+###  https://w3id.org/FAIR-course-UT/2025-2026/group22/ont#VehicleModel
+:VehicleModel rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
