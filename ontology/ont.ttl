@@ -44,6 +44,12 @@ om-2:mile-USSurvey rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
+###  https://schema.org/modelDate
+<https://schema.org/modelDate> rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:label "ModelYear"@en .
+
+
 ###  https://schema.org/postalCode
 <https://schema.org/postalCode> rdf:type owl:DatatypeProperty ;
                                 rdfs:subPropertyOf owl:topDataProperty ;
@@ -91,12 +97,6 @@ om-2:mile-USSurvey rdf:type owl:AnnotationProperty .
            dc:identifier :VehicleId .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group22/schema.org/modelDate
-<https://w3id.org/FAIR-course-UT/2025-2026/group22/schema.org/modelDate> rdf:type owl:DatatypeProperty ;
-                                                                         rdfs:subPropertyOf owl:topDataProperty ;
-                                                                         rdfs:label "ModelYear"@en .
-
-
 ###  https://www.wikidata.org/wiki/Q1093829
 <https://www.wikidata.org/wiki/Q1093829> rdf:type owl:DatatypeProperty ;
                                          rdfs:subPropertyOf owl:topDataProperty ,
@@ -119,7 +119,7 @@ om-2:mile-USSurvey rdf:type owl:AnnotationProperty .
                                         rdfs:subPropertyOf owl:topDataProperty ;
                                         rdfs:domain :VehicleModel ;
                                         rdfs:range xsd:string ;
-                                        rdfs:label "Manufacturer"@en .
+                                        rdfs:label "Make"@en .
 
 
 ###  https://www.wikidata.org/wiki/Q3231690
