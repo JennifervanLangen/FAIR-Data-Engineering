@@ -5,18 +5,17 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix loc: <http://localhost:8080/>.
 @prefix d: <http://localhost:8080/dataset/>.
-@prefix gro: <https://www.w3id.org/fair-course-UT/2025/group22/>.
+@prefix d0: <https://www.w3id.org/fair-course-UT/2025/group22/data/>.
 
 loc:new
     a dcat:Distribution, dcat:Resource;
-    dct:description
-    "FAIRified distribution of the electric vehicle population dataset.";
-    dct:isPartOf d:eb541e3d-646e-41ff-a08d-637a86ee4e06;
-    dct:issued "2025-10-28T23:00:00Z"^^xsd:dateTime;
+    dct:description "This contains the FAIRified dataset in turtle format.";
+    dct:isPartOf d:1cc0f729-b04e-4ba1-ba5f-c33a459ae796;
+    dct:issued "2025-10-26T23:00:00Z"^^xsd:dateTime;
     dct:language language:en;
     dct:license <http://purl.org/NET/rdflicense/cc-zero1.0>;
     dct:publisher [ a foaf:Agent; foaf:name "Group 22" ];
-    dct:title "FAIRified distribution";
-    dcat:downloadURL gro:fairifieddataset;
-    dcat:mediaType "text/csv";
+    dct:title "FAIRified dataset";
+    dcat:downloadURL d0:fair;
+    dcat:mediaType "text/turtle";
     dcat:version "1.0.0".

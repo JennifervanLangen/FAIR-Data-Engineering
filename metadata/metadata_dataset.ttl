@@ -11,11 +11,14 @@ loc:new
     a dcat:Dataset, dcat:Resource;
     dct:description
         "This dataset shows the Battery Electric Vehicles (BEVs) and Plug-in Hybrid Electric Vehicles (PHEVs) that are currently registered through Washington State Department of Licensing (DOL).";
-    dct:isPartOf c:4ec6b4c0-1218-4cfb-8936-865599b99457;
-    dct:issued "2024-11-09T23:00:00Z"^^xsd:dateTime;
+    dct:isPartOf c:70bd367b-a6fc-4262-85b4-5793f5a1c634;
+    dct:issued "2025-10-26T23:00:00Z"^^xsd:dateTime;
     dct:language language:en;
     dct:license <http://purl.org/NET/rdflicense/cc-zero1.0>;
     dct:publisher [ a foaf:Agent; foaf:name "Group 22" ];
     dct:title "Electric Vehicle Population Data";
-    dcat:theme wd:Q13629441;
+    dcat:keyword
+        "Battery Electric Vehicle", "Plug-in Hybrid Electric Vehicle",
+        "Transportation", "Washington State Department of Licensing";
+    dcat:theme wd:Q13629441, wd:Q4728349;
     dcat:version "1.0.0".

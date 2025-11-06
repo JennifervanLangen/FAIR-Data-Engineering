@@ -5,17 +5,18 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix loc: <http://localhost:8080/>.
 @prefix d: <http://localhost:8080/dataset/>.
-@prefix gro: <https://www.w3id.org/fair-course-UT/2025/group22/>.
+@prefix d0: <https://www.w3id.org/fair-course-UT/2025/group22/data/>.
 
 loc:new
     a dcat:Distribution, dcat:Resource;
-    dct:description "Original dataset in csv format.";
-    dct:isPartOf d:236c0ad0-e0d3-42b7-932b-5f96f9933cc2;
-    dct:issued "2024-11-09T23:00:00Z"^^xsd:dateTime;
+    dct:description
+        "The original CSV dataset from Washington State Deparment of Licensing, provided by data.gov.";
+    dct:isPartOf d:1cc0f729-b04e-4ba1-ba5f-c33a459ae796;
+    dct:issued "2025-10-26T23:00:00Z"^^xsd:dateTime;
     dct:language language:en;
     dct:license <http://purl.org/NET/rdflicense/cc-zero1.0>;
     dct:publisher [ a foaf:Agent; foaf:name "Group 22" ];
     dct:title "Original dataset";
-    dcat:downloadURL gro:originaldataset;
+    dcat:downloadURL d0:original;
     dcat:mediaType "text/csv";
     dcat:version "1.0.0".
